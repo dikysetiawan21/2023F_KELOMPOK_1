@@ -1,0 +1,31 @@
+class Node:
+    def __init__(self, nama, harga):
+        self.nama = nama
+        self.harga = harga
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def tambah_pesanan(self, nama, harga):
+        new_node = Node(nama, harga)
+        if not self.head:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    print(" SELAMAT DATANG DI E-ORDER WARUNG D4 MI")
+    print("MINUMAN DAN MIE PEDAS TERSEDIA DI SINI!!  ")
+
+    def tampilkan_pesanan(self):
+        if not self.head:
+            print("Keranjang masih kosong.")
+            return
+
+        print("\nPesanan yang sudah ditambahkan:")
+        print("+----+--------------------------+--------+")
+        print("| No |       Nama Menu          | Harga  |")
