@@ -29,3 +29,37 @@ class linkedlist:
         print("\nPesanan yang sudah ditambahkan:")
         print("+----+--------------------------+--------+")
         print("| No |       Nama Menu          | Harga  |")
+        print("+----+--------------------------+--------+")
+
+        current = self.head
+        index = 1
+        while current:
+            print(f"| {index:2} | {current.nama.capitalize():24} | {current.harga:6} |")
+            current = current.next
+            index += 1
+
+        print("+----+--------------------------+--------+")
+
+    def total_harga(self):
+        total = 0
+        current = self.head
+        while current:
+            total += current.harga
+            current = current.next
+        return total
+
+# Menu Miexue
+menu = {
+    'miexue ice cream': 5000,
+    'boba shake': 16000,
+    'mi sundae': 14000,
+    'mi ganas': 11000,
+    'creamy mango boba': 22000
+}
+
+keranjang = linkedlist()
+
+print("\nMenu Miexue:")
+print("+----+--------------------------+--------+")
+print("| No |       Nama Menu          | Harga  |")
+print("+----+--------------------------+--------+")
