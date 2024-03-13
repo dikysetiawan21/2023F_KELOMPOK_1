@@ -63,3 +63,32 @@ print("\nMenu Miexue:")
 print("+----+--------------------------+--------+")
 print("| No |       Nama Menu          | Harga  |")
 print("+----+--------------------------+--------+")
+
+for index, (item, harga) in enumerate(menu.items(), start=1):
+    print(f"| {index:2} | {item.capitalize():24} | {harga:6} |")
+
+print("+----+--------------------------+--------+")
+
+print("Silakan pilih menu yang ingin dipesan atau ketik 'done' untuk selesai.")
+
+while True:
+    pilihan = input("Masukkan menu yang ingin dipesan: ").strip().lower()
+
+    if pilihan == 'done':
+        break
+
+    if pilihan not in menu:
+        print("Menu tidak valid, silakan pilih lagi.")
+        continue
+
+    keranjang.tambah_pesanan(pilihan, menu[pilihan])
+    print(f"{pilihan.capitalize()} sudah ditambahkan ke keranjang.")
+
+keranjang.tampilkan_pesanan()
+
+if keranjang.head:
+    total_biaya = keranjang.total_harga()
+    print(f"\nTotal biaya yang harus dibayarkan adalah {total_biaya} rupiah")
+    print (" Terimakasih sudah memesan :)")
+else:
+    print("\nAnda belum memesan apapun. Terima kasih!")
