@@ -4,7 +4,7 @@ class Node:
         self.harga = harga
         self.next = None
 
-class Keranjang:
+class linkedlist:
     def __init__(self):
         self.head = None
 
@@ -57,7 +57,7 @@ menu = {
     'creamy mango boba': 22000
 }
 
-keranjang = Keranjang()
+keranjang = linkedlist()
 
 print("\nMenu Miexue:")
 print("+----+--------------------------+--------+")
@@ -89,6 +89,6 @@ keranjang.tampilkan_pesanan()
 if keranjang.head:
     total_biaya = keranjang.total_harga()
     print(f"\nTotal biaya yang harus dibayarkan adalah {total_biaya} rupiah")
-    print ("Terimakasih sudah memesan :)")
+    print (" Terimakasih sudah memesan :)")
 else:
-    print("\nAnda belum memesan apapun. Terima kasih!") 
+    print("\nAnda belum memesan apapun. Terima kasih!")
